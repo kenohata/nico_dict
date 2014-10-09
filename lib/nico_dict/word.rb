@@ -13,6 +13,6 @@ class NicoDict::Word
   end
 
   def title
-    html.at_css("title").text
+    el = html.at_css("title") and el.text
   end
 end
