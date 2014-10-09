@@ -1,5 +1,3 @@
-require "open-uri"
-
 class NicoDict::Word
   attr_accessor :file
   attr_reader :html
