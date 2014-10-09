@@ -20,4 +20,8 @@ class NicoDict::Word
     /^(.+)とは \(/ =~ title
     $1
   end
+
+  def article
+    el = html.at_css("#article") and el.text
+  end
 end
