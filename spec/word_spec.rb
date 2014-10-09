@@ -8,6 +8,6 @@ describe NicoDict::Word do
   end
 
   it do
-    raise Exception, @word.title
+    expect(@word.word).to eq("ヤマノススメ")
   end
 end

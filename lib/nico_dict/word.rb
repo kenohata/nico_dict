@@ -15,4 +15,9 @@ class NicoDict::Word
   def title
     el = html.at_css("title") and el.text
   end
+
+  def word
+    /^(.+)とは \(/ =~ title
+    $1
+  end
 end
