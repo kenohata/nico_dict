@@ -19,6 +19,18 @@ class NicoDict::Word
     $1
   end
 
+  def meta_refresh
+    html.at_css("meta[http-equiv=refresh]")
+  end
+
+  def redirect_path
+    regexp  = /^1;URL=http:\/\/dic.nicovideo.jp(.*)$/
+
+    if content = meta_refresh["content"] and md = regexp.match(content)
+      md[1]
+    end
+  end
+
   def article
     el = html.at_css("#article") and el.text
   end
